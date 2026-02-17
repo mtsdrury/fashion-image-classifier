@@ -118,4 +118,7 @@ def build_model(name: str, num_classes: int, **kwargs) -> nn.Module:
         raise ValueError(
             f"Unknown model '{name}'. Choose from: {list(MODEL_REGISTRY.keys())}"
         )
+    # SimpleCNN doesn't accept 'pretrained', so drop it
+    if name == "simple_cnn":
+        kwargs.pop("pretrained", None)
     return MODEL_REGISTRY[name](num_classes=num_classes, **kwargs)
