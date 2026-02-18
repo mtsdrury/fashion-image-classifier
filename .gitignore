@@ -14,8 +14,9 @@ results/metrics.json
 # W&B
 wandb/
 
-# Environment
+# Environment / credentials
 .env
+kaggle.json
 .venv/
 __pycache__/
 *.pyc
